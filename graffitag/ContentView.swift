@@ -1,24 +1,15 @@
-//
-//  ContentView.swift
-//  graffitag
-//
-//  Created by Rafael Ortiz on 27/04/26.
-//
-
 import SwiftUI
 
-struct ContentView: View {
+// AppRootView acts as the navigation root.
+// Auth state injection happens here once AuthService is wired (FASE 1 Task 3).
+struct AppRootView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        Text("GraffiTag")
+            .font(.largeTitle.bold())
+            .foregroundStyle(.primary)
     }
 }
 
 #Preview {
-    ContentView()
+    AppRootView()
 }
