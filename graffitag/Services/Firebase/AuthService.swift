@@ -25,7 +25,7 @@ final class AuthService: AuthServiceProtocol {
     var isAuthenticated: Bool { currentUser != nil }
 
     private let auth: Auth
-    nonisolated private var stateHandle: AuthStateDidChangeListenerHandle?
+    private var stateHandle: AuthStateDidChangeListenerHandle?
 
     init(auth: Auth = .auth()) {
         self.auth = auth
@@ -37,8 +37,12 @@ final class AuthService: AuthServiceProtocol {
     }
 
     deinit {
-        if let stateHandle {
-            auth.removeStateDidChangeListener(stateHandle)
+        // MainActor.assumeIsolated is safe here: AuthService lives on @MainActor
+        // and is always released from the main thread by SwiftUI's @State lifecycle.
+        MainActor.assumeIsolated {
+            if let stateHandle {
+                auth.removeStateDidChangeListener(stateHandle)
+            }
         }
     }
 
