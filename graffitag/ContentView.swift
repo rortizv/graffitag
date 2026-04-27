@@ -1,15 +1,22 @@
 import SwiftUI
 
-// AppRootView acts as the navigation root.
-// Auth state injection happens here once AuthService is wired (FASE 1 Task 3).
 struct AppRootView: View {
+    @Environment(AuthService.self) private var authService
+
     var body: some View {
-        Text("GraffiTag")
-            .font(.largeTitle.bold())
-            .foregroundStyle(.primary)
+        if authService.isAuthenticated {
+            // Replaced in FASE 3 with full TabView
+            Text("Welcome, \(authService.currentUser?.displayName ?? "Artist")")
+                .font(.title2.bold())
+        } else {
+            // Replaced in FASE 1 Task 5 with LoginView
+            Text("GraffiTag — Login coming soon")
+                .font(.title2.bold())
+        }
     }
 }
 
 #Preview {
     AppRootView()
+        .environment(AuthService())
 }

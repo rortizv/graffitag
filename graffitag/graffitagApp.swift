@@ -4,6 +4,8 @@ import Firebase
 @main
 struct GraffiTagApp: App {
 
+    @State private var authService = AuthService()
+
     init() {
         FirebaseApp.configure()
     }
@@ -11,6 +13,7 @@ struct GraffiTagApp: App {
     var body: some Scene {
         WindowGroup {
             AppRootView()
+                .environment(authService)
         }
     }
 }
