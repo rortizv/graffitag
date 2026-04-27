@@ -2,7 +2,7 @@
 
 ## 🟢 FASE 1: Foundation & Auth
 - [x] Configuración de carpeta: `Core`, `Features`, `Services`, `Models`, `Views`.
-- [ ] Integración de Firebase SDK y archivo `GoogleService-Info.plist`.
+- [x] Integración de Firebase SDK y archivo `GoogleService-Info.plist`.
 - [ ] Implementación de `AuthService.swift` (Google & Email Auth).
 - [ ] Configuración de Firebase App Check (DeviceCheck/App Attest).
 - [ ] Vista de Login/Registro con validación de formularios.
