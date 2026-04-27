@@ -1,20 +1,14 @@
 import SwiftUI
 
 struct AuthView: View {
-    @Environment(AuthService.self) private var authService
-    @State private var viewModel: AuthViewModel?
+    @State private var viewModel: AuthViewModel
+
+    init(authService: AuthService) {
+        _viewModel = State(initialValue: AuthViewModel(authService: authService))
+    }
 
     var body: some View {
-        Group {
-            if let vm = viewModel {
-                AuthContentView(viewModel: vm)
-            }
-        }
-        .onAppear {
-            if viewModel == nil {
-                viewModel = AuthViewModel(authService: authService)
-            }
-        }
+        AuthContentView(viewModel: viewModel)
     }
 }
 
@@ -25,25 +19,20 @@ private struct AuthContentView: View {
 
     var body: some View {
         ZStack {
-            // Background
             Color.black.ignoresSafeArea()
             BackgroundSprayPattern()
 
             ScrollView {
                 VStack(spacing: 0) {
-                    // Logo
                     LogoHeader()
                         .padding(.top, 64)
                         .padding(.bottom, 40)
 
-                    // Card
                     VStack(spacing: 24) {
-                        // Mode toggle
                         ModeToggle(isRegister: $viewModel.isShowingRegister) {
                             viewModel.switchMode()
                         }
 
-                        // Form fields
                         VStack(spacing: 14) {
                             if viewModel.isShowingRegister {
                                 GraffiTextField(
@@ -82,15 +71,11 @@ private struct AuthContentView: View {
                             }
                         }
 
-                        // Error message
                         if let error = viewModel.errorMessage {
-                            ErrorBanner(message: error) {
-                                viewModel.clearError()
-                            }
-                            .transition(.scale.combined(with: .opacity))
+                            ErrorBanner(message: error) { viewModel.clearError() }
+                                .transition(.scale.combined(with: .opacity))
                         }
 
-                        // Primary CTA
                         PrimaryButton(
                             title: viewModel.isShowingRegister ? "Create account" : "Sign in",
                             isLoading: viewModel.isLoading,
@@ -107,11 +92,8 @@ private struct AuthContentView: View {
                             }
                         }
 
-                        // Forgot password
                         if !viewModel.isShowingRegister {
-                            Button {
-                                viewModel.showForgotPassword = true
-                            } label: {
+                            Button { viewModel.showForgotPassword = true } label: {
                                 Text("Forgot password?")
                                     .font(.footnote)
                                     .foregroundStyle(.gray)
@@ -120,7 +102,6 @@ private struct AuthContentView: View {
 
                         DividerWithLabel(text: "or")
 
-                        // Google Sign-In
                         GoogleSignInButton(isLoading: viewModel.isLoading) {
                             Task { await viewModel.signInWithGoogle() }
                         }
@@ -387,6 +368,5 @@ private struct ForgotPasswordSheet: View {
 }
 
 #Preview {
-    AuthView()
-        .environment(AuthService())
+    AuthView(authService: AuthService())
 }
