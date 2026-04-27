@@ -5,8 +5,8 @@
 - [x] Integración de Firebase SDK y archivo `GoogleService-Info.plist`.
 - [x] Implementación de `AuthService.swift` (Google & Email Auth).
 - [x] Configuración de Firebase App Check (DeviceCheck/App Attest).
-- [ ] Vista de Login/Registro con validación de formularios.
-- [ ] App language: English
+- [x] Vista de Login/Registro con validación de formularios.
+- [x] App language: English
 
 ## 🟡 FASE 2: Proximity UI & Location
 - [ ] `LocationManager.swift` con Swift Concurrency y filtrado de distancia.
