@@ -9,7 +9,7 @@
 - [x] App language: English
 
 ## 🟡 FASE 2: Proximity UI & Location
-- [ ] `LocationManager.swift` con Swift Concurrency y filtrado de distancia.
+- [x] `LocationManager.swift` con Swift Concurrency y filtrado de distancia.
 - [ ] Implementación del `HeartbeatModifier.swift` (Borde con glow animado).
 - [ ] Lógica de cambio de color (Naranja > 200m, Rojo < 100m) basado en coordenadas de Firestore.
 - [ ] Vibración háptica con `UIImpactFeedbackGenerator`.
