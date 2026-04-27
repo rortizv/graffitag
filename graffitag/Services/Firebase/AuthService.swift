@@ -25,7 +25,7 @@ final class AuthService: AuthServiceProtocol {
     var isAuthenticated: Bool { currentUser != nil }
 
     private let auth: Auth
-    private var stateHandle: AuthStateDidChangeListenerHandle?
+    nonisolated private var stateHandle: AuthStateDidChangeListenerHandle?
 
     init(auth: Auth = .auth()) {
         self.auth = auth
@@ -127,3 +127,4 @@ final class AuthService: AuthServiceProtocol {
         }
     }
 }
+

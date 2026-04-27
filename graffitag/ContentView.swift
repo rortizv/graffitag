@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseAuth
 
 struct AppRootView: View {
     @Environment(AuthService.self) private var authService
