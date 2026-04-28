@@ -20,6 +20,33 @@ struct GraffiTag: Identifiable, Codable, Sendable {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 
+    // Memberwise init for creating new tags (id assigned by Firestore)
+    init(
+        authorId: String,
+        authorName: String,
+        title: String,
+        description: String,
+        imageURL: String,
+        depthMapURL: String? = nil,
+        worldMapURL: String? = nil,
+        latitude: Double,
+        longitude: Double,
+        createdAt: Date,
+        likesCount: Int = 0
+    ) {
+        self.authorId = authorId
+        self.authorName = authorName
+        self.title = title
+        self.description = description
+        self.imageURL = imageURL
+        self.depthMapURL = depthMapURL
+        self.worldMapURL = worldMapURL
+        self.latitude = latitude
+        self.longitude = longitude
+        self.createdAt = createdAt
+        self.likesCount = likesCount
+    }
+
     enum CodingKeys: String, CodingKey {
         case id, authorId, authorName, title, description
         case imageURL, depthMapURL, worldMapURL

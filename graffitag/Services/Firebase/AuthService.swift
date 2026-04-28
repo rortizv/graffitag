@@ -1,7 +1,7 @@
 import Foundation
 import FirebaseAuth
 import GoogleSignIn
-import UIKit
+internal import UIKit
 
 // MARK: - Protocol
 

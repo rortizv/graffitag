@@ -7,7 +7,8 @@ import GoogleSignIn
 struct GraffiTagApp: App {
 
     @State private var authService: AuthService
-    @State private var locationManager = LocationManager()
+    @State private var locationManager: LocationManager
+    @State private var firestoreService: FirestoreService
 
     init() {
         AppCheck.setAppCheckProviderFactory(GraffiTagAppCheckProviderFactory())
@@ -16,6 +17,8 @@ struct GraffiTagApp: App {
             GIDSignIn.sharedInstance.configuration = GIDConfiguration(clientID: clientID)
         }
         _authService = State(initialValue: AuthService())
+        _locationManager = State(initialValue: LocationManager())
+        _firestoreService = State(initialValue: FirestoreService())
     }
 
     var body: some Scene {
@@ -23,6 +26,7 @@ struct GraffiTagApp: App {
             AppRootView()
                 .environment(authService)
                 .environment(locationManager)
+                .environment(firestoreService)
         }
     }
 }

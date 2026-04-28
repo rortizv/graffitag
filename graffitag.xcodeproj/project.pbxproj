@@ -6,13 +6,35 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8E65E0FD2F9F3FA800E4921E /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 8E65E0FC2F9F3FA800E4921E /* FirebaseAppCheck */; };
+		8E65E0FF2F9F3FA800E4921E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8E65E0FE2F9F3FA800E4921E /* FirebaseAuth */; };
+		8E65E1012F9F3FA800E4921E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8E65E1002F9F3FA800E4921E /* FirebaseFirestore */; };
+		8E65E1032F9F3FA800E4921E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8E65E1022F9F3FA800E4921E /* FirebaseStorage */; };
+		8E65E10A2F9F45B400E4921E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8E65E1092F9F45B400E4921E /* GoogleSignIn */; };
+		8E65E10C2F9F45B400E4921E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8E65E10B2F9F45B400E4921E /* GoogleSignInSwift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		8E65E0BD2F9F3CA300E4921E /* graffitag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = graffitag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8E65E1072F9F44A700E4921E /* Exceptions for "graffitag" folder in "graffitag" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8E65E0BC2F9F3CA300E4921E /* graffitag */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8E65E0BF2F9F3CA300E4921E /* graffitag */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8E65E1072F9F44A700E4921E /* Exceptions for "graffitag" folder in "graffitag" target */,
+			);
 			path = graffitag;
 			sourceTree = "<group>";
 		};
@@ -23,6 +45,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E65E10A2F9F45B400E4921E /* GoogleSignIn in Frameworks */,
+				8E65E0FD2F9F3FA800E4921E /* FirebaseAppCheck in Frameworks */,
+				8E65E1032F9F3FA800E4921E /* FirebaseStorage in Frameworks */,
+				8E65E10C2F9F45B400E4921E /* GoogleSignInSwift in Frameworks */,
+				8E65E0FF2F9F3FA800E4921E /* FirebaseAuth in Frameworks */,
+				8E65E1012F9F3FA800E4921E /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +93,12 @@
 			);
 			name = graffitag;
 			packageProductDependencies = (
+				8E65E0FC2F9F3FA800E4921E /* FirebaseAppCheck */,
+				8E65E0FE2F9F3FA800E4921E /* FirebaseAuth */,
+				8E65E1002F9F3FA800E4921E /* FirebaseFirestore */,
+				8E65E1022F9F3FA800E4921E /* FirebaseStorage */,
+				8E65E1092F9F45B400E4921E /* GoogleSignIn */,
+				8E65E10B2F9F45B400E4921E /* GoogleSignInSwift */,
 			);
 			productName = graffitag;
 			productReference = 8E65E0BD2F9F3CA300E4921E /* graffitag.app */;
@@ -94,6 +128,10 @@
 			);
 			mainGroup = 8E65E0B42F9F3CA300E4921E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8E65E0FB2F9F3FA800E4921E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8E65E1082F9F45B400E4921E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8E65E0BE2F9F3CA300E4921E /* Products */;
 			projectDirPath = "";
@@ -256,6 +294,10 @@
 				DEVELOPMENT_TEAM = WPNPAM726T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = graffitag/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSCameraUsageDescription = "GraffiTag needs the camera to capture and place AR tags.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "GraffiTag uses your location to show nearby street art.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -288,6 +330,10 @@
 				DEVELOPMENT_TEAM = WPNPAM726T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = graffitag/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				INFOPLIST_KEY_NSCameraUsageDescription = "GraffiTag needs the camera to capture and place AR tags.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "GraffiTag uses your location to show nearby street art.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -332,6 +378,58 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8E65E0FB2F9F3FA800E4921E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.12.1;
+			};
+		};
+		8E65E1082F9F45B400E4921E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E65E0FC2F9F3FA800E4921E /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E65E0FB2F9F3FA800E4921E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		8E65E0FE2F9F3FA800E4921E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E65E0FB2F9F3FA800E4921E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8E65E1002F9F3FA800E4921E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E65E0FB2F9F3FA800E4921E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8E65E1022F9F3FA800E4921E /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E65E0FB2F9F3FA800E4921E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		8E65E1092F9F45B400E4921E /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E65E1082F9F45B400E4921E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		8E65E10B2F9F45B400E4921E /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E65E1082F9F45B400E4921E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8E65E0B52F9F3CA300E4921E /* Project object */;
 }
